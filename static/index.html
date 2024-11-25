@@ -2,5 +2,11 @@
 <head>
 </head>
 <body>
-    <h1>This is my test website please please please work!</h1>
+    <div id="message"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (e) => {
+            document.getElementById("message").innerText = `hello from disco!!! the datetime is ${new Date()}`
+        })
+    </script>
 </body>
