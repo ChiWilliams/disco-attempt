@@ -1,15 +1,16 @@
 from datetime import datetime
 
-from flask import Flask
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
 
-@app.route("/")
-def hello_world():
+@app.get("/")
+async def hello_world():
     print("new web request")
-    return f"hello from disco!!! the datetime is {datetime.now()}"
+    message = f"hello from disco!!! the datetime is {datetime.now()}"
+    return {"message": message}
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=8080, debug=True)
