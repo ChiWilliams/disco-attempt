@@ -8,7 +8,7 @@ app = FastAPI()
 @app.get("/")
 async def hello_world():
     print("new web request")
-    message = f"hello from disco!!! the datetime is {datetime.now()}"
+    message = f"hello from disco with fastAPI!!! the datetime is {datetime.now()}"
     return {"message": message}
 
 
