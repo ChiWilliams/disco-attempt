@@ -12,17 +12,9 @@ app = FastAPI()
 
 @app.get("/", response_class=HTMLResponse)
 async def home():
-    return """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Simple FastAPI Site</title>
-    </head>
-    <body>
-        <h1>This is my test website please please please work!</h1>
-    </body>
-    </html>
-"""
+    with open("static/index.html", "r") as f:
+        html_content = f.read()
+    return html_content
 
 
 
