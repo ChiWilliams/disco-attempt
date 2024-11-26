@@ -8,9 +8,11 @@ import uvicorn
 
 app = FastAPI()
 
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 @app.get("/", response_class=HTMLResponse)
 async def home():
-    with open("static/index.html", "r") as f:
+    with open("template/index.html", "r") as f:
         html_content = f.read()
     return html_content
 
